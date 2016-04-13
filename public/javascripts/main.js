@@ -1,11 +1,4 @@
-//var func = require('./functions.js');
-var $ = require('jquery');
-require("jquery-ui");
-var swal = require('sweetalert');
-var clipboard = require('clipboard');
-require("angular");
 var voicelist = responsiveVoice.getVoices();
-
 $(document).ready(function() {
 
     $("a span").bind("click", function() {
@@ -239,7 +232,7 @@ $(document).ready(function() {
                 "transform": "rotate(0deg)"
             })
             img.css({
-                "width": "600px",
+                "width": "500px",
                 "margin": "0",
                 "left": "0",
                 "right": "0"

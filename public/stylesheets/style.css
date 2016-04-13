@@ -157,7 +157,7 @@ h1{
 }
 
 .bloc{
-	width: 600px;
+	width: 500px;
 	border-radius: 5px;
 	margin: 20px;
 	display: inline-block;
@@ -181,7 +181,7 @@ h1{
 	font-family: 'Sansita One', cursive;
 	text-shadow: 0px 0px 1px white;
 	color: #404040;
-	width: 600px;
+	width: 500px;
 	text-align: center;
 	font-size: 12px;
 }
@@ -190,8 +190,8 @@ h1{
 	display: inline-block;
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5),
 				0 25px 50px 0 rgba(0, 0, 0, 0.4);
-	width: 600px;
-	height: 900px;
+	width: 500px;
+	height: 750px;
 	overflow: hidden;
 	position: relative;
     -webkit-filter: contrast(120%);	
@@ -217,14 +217,14 @@ h1{
 }
 
 .truc{
-	width: 600px;
+	width: 500px;
 	padding-top: 15px;
 }
 
 .container{
 	position: absolute;
-	width: 600px;
-	height: 900px;
+	width: 500px;
+	height: 750px;
 }
 
 .container>img{
@@ -234,7 +234,7 @@ h1{
 
 
 .backgroundsContainer img{
-	min-height: 900px !important;
+	min-height: 750px !important;
 	width: auto !important;
 }
 
@@ -410,7 +410,7 @@ h1{
 	top: 840px;
 	margin: auto;
 	display: table;
-	max-width: 600px;
+	max-width: 500px;
 	background-color: white;
 	padding: 0px 7px;
 	border-radius: 5px;
