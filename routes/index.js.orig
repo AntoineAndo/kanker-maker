@@ -1,0 +1,27 @@
+var express = require('express');
+var router = express.Router();
+<<<<<<< HEAD
+var func = require(__dirname+"/../public/javascripts/functions");
+=======
+var func = require("../functions");
+>>>>>>> a27e9901d8954867490abddb45efa3a4e16b31f0
+
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+
+	var bases = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/bases");
+	var eyes = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/eyes");
+	var hands = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/hands");
+	var hats = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/hats");
+	var mustaches = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/mustaches");
+	var backgrounds = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/backgrounds");
+	var accessories = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/accessories");
+	var fronts = func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/fronts");
+
+	assets = ["background","base","eye","mustache","hat","hand","accessorie","front"];
+
+	res.render('index', {fronts: fronts, bases: bases, eyes: eyes, mustaches: mustaches, hats: hats, backgrounds: backgrounds, accessories: accessories, hands: hands, assets: assets});
+});
+
+module.exports = router;

@@ -1,0 +1,94 @@
+extends layout
+
+block content
+	.overlay
+		div
+			a.start.link--mallki Kanker Maker
+				span(data-letters="Kanker Maker")
+				span(data-letters="Kanker Maker")
+
+
+		a(href="http://www.reinold-invaders.com")
+			img(src="/images/wiggly-reinold.gif")
+	.main
+		h1 KankerMaker
+		h2#possibilities
+		script(type='text/javascript')
+			|var assets = [];
+			each val in assets
+				|assets["#{val.name}"] = [];
+				each truc in val.list
+					|assets["#{val.name}"].push("#{truc}");
+			|var assetList = [];
+			each truc in assetList
+				|assetList.push("#{truc}");
+
+		script(src='/javascripts/serializer.js')
+
+		div(ng-app='')
+			.bloc.imageBloc
+				.truc
+					#hue-slider
+				.imgContainer
+
+					each val in assets
+						div(class="#{val.name}Container container")
+							each truc, index in val.list
+								if index === 0
+									img(src= "images/Assets/#{val.name}/" + truc, id="#{val.name}-" + index, class="#{val.name}", rotate="0")
+
+					.textsContainer.container
+						p(ng-bind='text')
+				.buttons			
+					#save
+						|SAVE
+					#upload
+						|UPLOAD	
+
+			.bloc
+				.controllers
+					button(class="shuffle")
+						|RANDOMIZE
+					#accordion
+						each asset in assetList
+							h3 #{asset}
+							div(class="#{asset}Controllers controller")
+								button(class="prev-#{asset}")
+									|Precédent
+								span #{asset}
+								button(class="next-#{asset}")
+									|Suivant
+								br
+								button(class="up-#{asset}")
+									|↑
+								button(class="down-#{asset}")
+									|↓
+								button(class="left-#{asset}")
+									|←
+								button(class="right-#{asset}")
+									|→
+								br
+								button(class="zoom-#{asset}")
+									|+
+								button(class="unzoom-#{asset}")
+									|-
+								button(class="rotAnt-#{asset}")
+									|↶
+								button(class="rotClock-#{asset}")
+									|↷
+								button(class="front-#{asset}")
+									|Front
+								button(class="back-#{asset}")
+									|Back
+								button(class="flipX-#{asset}")
+									|Horizontal flip
+								button(class="random-#{asset}")
+									|RANDOM
+					p Caption: 
+					input.caption(type="text", ng-model="text")
+					button#speak Have fun
+					p#lang
+					select.languages(name="languages")
+						
+		script(src='/javascripts/html2canvas.js')
+		script(src="/javascripts/bundle.js")
