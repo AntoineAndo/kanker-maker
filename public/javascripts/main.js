@@ -1,5 +1,17 @@
 var voicelist = responsiveVoice.getVoices();
 $(document).ready(function() {
+/*
+    $(function(){
+        assetList.forEach(function(assetName, key){
+            assets[assetName].forEach(function(value, index){
+                src = "images/Assets/" + assetName + "/" + value;
+                image = getDataImg(src);
+                console.log(image);
+
+            });
+        });
+    });
+    */
 
     $("a span").bind("click", function() {
         $(".overlay").fadeOut(500);
@@ -43,12 +55,14 @@ $(document).ready(function() {
         });
     });
 
-    var audio = new Audio('/sounds/pwet.mp3');
+    //var audio = new Audio('/sounds/pwet.mp3');
 
     $(".controller button").bind("click", function() {
-        audio.pause();
-        audio.currentTime = 0;
-        audio.play();
+        /*
+            audio.pause();
+            audio.currentTime = 0;
+            audio.play();
+        */
 
         attrClass = $(this).attr("class").split("-").pop()
         id = $("." + attrClass).attr("id").split("-").pop();
@@ -288,11 +302,10 @@ $(document).ready(function() {
 
     function draw(img, attrClass, array, id, rotation) {
         img
-            .attr("src", "images/Assets/" + attrClass + "/" + array[id])
+            .attr("src", array[id])
             .attr("id", attrClass + '-' + id)
             .attr("class", attrClass)
             .attr("rotate", rotation);
     }
-
 
 });

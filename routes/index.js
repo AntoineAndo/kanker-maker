@@ -1,19 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request'), 
+var request = require('request').defaults({ encoding: null }), 
     fs      = require('fs');
 var func = require(__dirname+"/../public/javascripts/functions");
 var url = 'http://upload.wikimedia.org/wikipedia/commons/8/8c/JPEG_example_JPG_RIP_025.jpg';
 var images = require("images");
 var http = require('http');
 var easyimg = require('easyimage');
+var DataUri = require('datauri').sync;
 
 router.get('/', function(req, res, next) {
 
 	var myAssets = [];
 	var assets = func.listDirectories("/images/Assets");
 	
-	assets.forEach(function(asset){
+	assets.forEach(function(asset, key){
 		myAssets.push({name: asset, list: func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/"+asset)});
 	});
 

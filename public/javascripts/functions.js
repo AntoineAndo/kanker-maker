@@ -2,6 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var images = require('images');
 var easyimg = require('easyimage');
+var DataUri = require('datauri').sync;
 
 var getAllFilesFromFolder = function(dir) {
 
@@ -19,8 +20,9 @@ var getAllFilesFromFolder = function(dir) {
         }
         else{
             if( extension == "png" ){
-                var file = file.split("/").pop();
-                results.push(file);
+               // var file = file.split("/").pop();
+
+                results.push(DataUri(file));
             }
         }
 
@@ -36,8 +38,6 @@ var listDirectories = function(srcpath) {
     return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
 }
-
-
 
 var makeId = function(length)
 {

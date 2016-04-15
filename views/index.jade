@@ -22,8 +22,7 @@ block content
 			|var assetList = [];
 			each truc in assetList
 				|assetList.push("#{truc}");
-
-		script(src='/javascripts/serializer.js')
+			|console.log(assets);
 
 		div(ng-app='')
 			.bloc.imageBloc
@@ -35,7 +34,7 @@ block content
 						div(class="#{val.name}Container container")
 							each truc, index in val.list
 								if index === 0
-									img(src= "images/Assets/#{val.name}/" + truc, id="#{val.name}-" + index, class="#{val.name}", rotate="0")
+									img(src="#{truc}", id="#{val.name}-" + index, class="#{val.name}", rotate="0")
 
 					.textsContainer.container
 						p(ng-bind='text')
