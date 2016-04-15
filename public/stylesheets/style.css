@@ -22,6 +22,10 @@ body {
 	background: #EFFFE9 ;
 }
 
+.is-loading{
+	overflow: hidden;
+}
+
 h1{
 	color: #E71D36;
 	margin: 0;
@@ -61,11 +65,71 @@ h1{
 	text-align: center;
 }
 
-.overlay div{
+.overlay div.text{
 	position: relative;
 	text-align: center;
 	margin-top: 200px;
 	font-size: 100px;
+    z-index: 1001
+}
+
+.overlay a#reinold{
+	z-index: 1002;
+}
+
+.overlay .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+}
+ 
+.overlay .loader-section.section-left {
+    left: 0;
+}
+ 
+.overlay .loader-section.section-right {
+    right: 0;
+}
+
+.loaded .overlay .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+ 
+.loaded .overlay .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded .overlay .loader-section.section-right,
+.loaded .overlay .loader-section.section-left {
+ 
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000); 
+    		transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded .overlay {
+        -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+ 
+        -webkit-transition: all 0.3s 1s ease-out; 
+                transition: all 0.3s 1s ease-out;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out; 
+            transition: all 0.3s ease-out;
+}
+
+.loaded .overlay {
+    visibility: hidden;
 }
 
 .link--mallki {
@@ -81,7 +145,6 @@ h1{
 	-webkit-transition: none;
 	transition: none;
 	color: transparent;
-	cursor: pointer;
 }
 
 .link--mallki::before {
