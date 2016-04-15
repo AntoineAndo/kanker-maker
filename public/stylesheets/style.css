@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: 'opticorvinusskyline';
   src: url("../fonts/opticorvinus-skyline-webfont.eot");
@@ -11,6 +9,13 @@
 @font-face {
   font-family: 'amatic';
   src: url("../fonts/Amatic-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sansita One';
+  src: url("../fonts/SansitaOne.ttf");
   font-weight: bold;
   font-style: normal;
 }
