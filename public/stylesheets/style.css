@@ -72,8 +72,20 @@ h1{
     z-index: 1001
 }
 
-.overlay a#reinold{
+.overlay #reinold{
 	z-index: 1002;
+    position: relative;
+	text-shadow: 0px 0px 10px #202020;
+}
+
+.overlay h3{
+	font-size: 60px;
+	color: white;
+}
+
+#reinold img{
+	height: 35px;
+    vertical-align: bottom;
 }
 
 .overlay .loader-section {
@@ -82,7 +94,6 @@ h1{
     width: 51%;
     height: 100%;
 	background-color: #202020;
-    z-index: 1000;
 }
  
 .overlay .loader-section.section-left {
@@ -138,6 +149,7 @@ h1{
 	-webkit-transition: color 0.5s 0.25s;
 	transition: color 0.5s 0.25s;
 	overflow: hidden;
+	text-shadow: 0px 0px 10px #202020;
 }
 
 .link--mallki:hover {

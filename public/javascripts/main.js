@@ -13,13 +13,13 @@ $(document).ready(function() {
         });
     });
     */
-
+/*
     
         $("a span").bind("click", function() {
             //$(".overlay").fadeOut(500);
             $("body").attr("class", "loaded");
         });
-    
+    */
 
     $(function() {
 
