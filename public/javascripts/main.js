@@ -1,7 +1,10 @@
 var voicelist = responsiveVoice.getVoices();
+
 $(document).ready(function() {
     $("body").attr("class", "loaded");
-/*
+
+
+
     $(function(){
         assetList.forEach(function(assetName, key){
             assets[assetName].forEach(function(value, index){
@@ -12,7 +15,7 @@ $(document).ready(function() {
             });
         });
     });
-    */
+    
 /*
     
         $("a span").bind("click", function() {

@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 	assets.forEach(function(asset, key){
 		myAssets.push({name: asset, list: func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/"+asset)});
 	});
-
+	
 	res.render('index', {assets: myAssets, assetList: assets});
 
 });
