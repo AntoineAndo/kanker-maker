@@ -20,9 +20,14 @@ var getAllFilesFromFolder = function(dir) {
         }
         else{
             if( extension == "png" ){
-               // var file = file.split("/").pop();
-
-                results.push(DataUri(file));
+               var file = file.split("/");
+               file = file.splice(3,5);
+               var truc = "";
+               file.forEach(function(value, index){
+                    truc+= "/"+value;
+               });
+               results.push(truc);
+               // results.push(DataUri(file));
             }
         }
 

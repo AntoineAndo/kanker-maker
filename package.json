@@ -8,11 +8,13 @@
   "main": "./bin/www",
   "dependencies": {
     "angular": "^1.5.3",
+    "base64-js": "^1.1.2",
     "body-parser": "~1.13.2",
     "browserify": "^13.0.0",
     "clipboard": "^1.5.10",
     "cookie-parser": "~1.3.5",
     "datauri": "^1.0.4",
+    "datauri-cli": "^1.0.4",
     "debug": "~2.2.0",
     "easyimage": "^2.1.0",
     "express": "~4.13.1",
@@ -23,6 +25,7 @@
     "morgan": "~1.6.1",
     "request": "^2.70.0",
     "serve-favicon": "~2.3.0",
-    "sweetalert": "^1.1.3"
+    "sweetalert": "^1.1.3",
+    "urify": "^2.0.2"
   }
 }

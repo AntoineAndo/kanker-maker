@@ -1,6 +1,25 @@
 var voicelist = responsiveVoice.getVoices();
+
+assetList.forEach(function(assetName, assetIndex){
+    assets[assetName].forEach(function(file, fileIndex){
+        if(file.split(".").pop() == "png"){
+           // console.log(file);
+            var context = document.createElement('canvas').getContext('2d');
+            var image = new Image();
+            image.src = file;
+            image.onload = function(){
+                context.drawImage(image,0,0);
+                var theData = context.toDataURL("image/png");
+               // console.log(theData);
+            }
+        }
+    })
+});
+
 $(document).ready(function() {
     $("body").attr("class", "loaded");
+
+
 /*
     $(function(){
         assetList.forEach(function(assetName, key){
