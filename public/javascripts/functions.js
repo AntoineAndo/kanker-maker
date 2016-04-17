@@ -34,14 +34,14 @@ var getAllFilesPathFromFolder = function(dir) {
 
                 var file = file.split("/"); 
                 file = file.splice(file.length-4,5);
-               var truc = "";
-               file.forEach(function(value, index){
+                var truc = "";
+                file.forEach(function(value, index){
                     truc+= "/"+value;
-               });
+                });
                //results.push(truc);
 
                // var file = file.split("/").pop(); 
-                results.push(truc); 
+                results.push(DataUri("./public" + truc)); 
             }
         }
 
