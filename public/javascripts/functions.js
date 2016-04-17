@@ -20,17 +20,17 @@ var getAllFilesPathFromFolder = function(dir) {
         }
         else{
             if( extension == "png" ){
-                /*
+                
                var file = file.split("/");
-               file = file.splice(3,5);
+               file = file.splice(file.length - 4,5);
                var truc = "";
                file.forEach(function(value, index){
                     truc+= "/"+value;
                });
                //results.push(truc);
-               results.push(DataUri(truc+"/public/images/assets/bases/balkany.png"));
-               */
+               results.push(DataUri(truc));
                
+
                 var file = file.split("/").pop(); 
                 results.push(file); 
             }
