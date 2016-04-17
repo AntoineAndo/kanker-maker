@@ -4,7 +4,11 @@ $(document).ready(function() {
     $("body").attr("class", "loaded");
 
 
+<<<<<<< HEAD
 
+=======
+/*
+>>>>>>> e9a092048b8834615c79246b24a12ffe5e8d6ef0
     $(function(){
         assetList.forEach(function(assetName, key){
             assets[assetName].forEach(function(value, index){
