@@ -41,7 +41,7 @@ var getAllFilesPathFromFolder = function(dir) {
                //results.push(truc);
 
                // var file = file.split("/").pop(); 
-                results.push(DataUri("./paublic" + truc)); 
+                results.push(DataUri("./public" + truc)); 
             }
         }
 
