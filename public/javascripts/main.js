@@ -9,6 +9,7 @@ $(document).ready(function() {
         assetList.forEach(function(assetName, key){
             assets[assetName].forEach(function(value, index){
                 src = "images/Assets/" + assetName + "/" + value;
+                console.log(src);
                 image = getDataImg(src);
                 console.log(image);
 
