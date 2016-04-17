@@ -4,7 +4,7 @@ var images = require('images');
 var easyimg = require('easyimage');
 var DataUri = require('datauri').sync;
 
-var getAllFilesFromFolder = function(dir) {
+var getAllFilesPathFromFolder = function(dir) {
 
     var filesystem = require("fs");
     var results = [];
@@ -26,9 +26,36 @@ var getAllFilesFromFolder = function(dir) {
                file.forEach(function(value, index){
                     truc+= "/"+value;
                });
-               results.push(truc);
-               // results.push(DataUri(file));
+               //results.push(truc);
+               results.push(DataUri("./public/"+truc));
             }
+        }
+
+    });
+
+    return results;
+
+};
+
+var getAllFilesFromFolder = function(dir) {
+
+    var filesystem = require("fs");
+    var results = [];
+
+    filesystem.readdirSync(dir).forEach(function(file) {
+
+        file = dir+'/'+file;
+        extension = file.split('.').pop();
+        var stat = filesystem.statSync(file);
+
+        if (stat && stat.isDirectory()) {
+            results = results.concat(getAllFilesFromFolder(file))
+        }
+        else{
+            if( extension == "png" ){ 
+                var file = file.split("/").pop(); 
+                results.push(file); 
+            } 
         }
 
     });
@@ -78,5 +105,6 @@ var generateImage = function(assets, assetList, callback){
 
 exports.generateImage = generateImage;
 exports.getAllFilesFromFolder = getAllFilesFromFolder;
+exports.getAllFilesPathFromFolder = getAllFilesPathFromFolder;
 exports.listDirectories = listDirectories;
 exports.makeId = makeId;

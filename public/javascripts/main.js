@@ -3,6 +3,16 @@ var voicelist = responsiveVoice.getVoices();
 $(document).ready(function() {
     $("body").attr("class", "loaded");
 
+    var speeches = [];
+    readTextFile("/speech.txt", function(lines){
+        lines.forEach(function(line){
+            speeches.push(line);
+        });
+    });
+
+
+
+/*
     $(function(){
         assetList.forEach(function(assetName, key){
             assets[assetName].forEach(function(value, index){
@@ -14,6 +24,7 @@ $(document).ready(function() {
             });
         });
     });
+    */
     
 /*
     
@@ -231,14 +242,12 @@ $(document).ready(function() {
     }
 
     $(".shuffle").bind("click", function() {
-        readTextFile("/speech.txt", function(lines){
-            idText = Math.floor((Math.random() * lines.length) + 0);
-            text = lines[idText];
+        idSpeech = Math.floor((Math.random() * speeches.length) + 0);
+        text = speeches[idSpeech];
 
-            idLang = Math.floor((Math.random() * voicelist.length) + 0);
-            lang = voicelist[idLang].name;
-            speak(text, lang);
-        });
+        idLang = Math.floor((Math.random() * voicelist.length) + 0);
+        lang = voicelist[idLang].name;
+        speak(text, lang);
 
         assetList.forEach(function(value, index) {
             length = assets[value].length;
