@@ -20,6 +20,7 @@ var getAllFilesPathFromFolder = function(dir) {
         }
         else{
             if( extension == "png" ){
+                /*
                var file = file.split("/");
                file = file.splice(3,5);
                var truc = "";
@@ -27,7 +28,11 @@ var getAllFilesPathFromFolder = function(dir) {
                     truc+= "/"+value;
                });
                //results.push(truc);
-               results.push(DataUri("./public/"+truc));
+               results.push(DataUri(truc+"/public/images/assets/bases/balkany.png"));
+               */
+               
+                var file = file.split("/").pop(); 
+                results.push(file); 
             }
         }
 
