@@ -76,7 +76,7 @@ $(document).ready(function() {
         new clipboard('.btn');
 
         $(".draggable").draggable();
-
+/*
         $("#hue-slider").slider({
             range: "max",
             min: 0,
@@ -90,6 +90,7 @@ $(document).ready(function() {
                 })
             }
         });
+        */
     });
 
     //var audio = new Audio('/sounds/pwet.mp3');

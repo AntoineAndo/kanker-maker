@@ -17,7 +17,6 @@ block content
 
 	.main
 		h1 KankerMaker
-		h2#possibilities
 		script(type='text/javascript')
 			|var assets = [];
 			each val in assets
@@ -30,11 +29,7 @@ block content
 			|console.log(assets);
 
 		div(ng-app='')
-			.truc
-				#hue-slider
 			.bloc.imageBloc
-				.truc
-					#hue-slider
 				.imgContainer
 
 					each val in assets
@@ -50,6 +45,7 @@ block content
 						|SAVE
 					#upload
 						|UPLOAD	
+				
 
 			.bloc
 				.controllers
@@ -95,7 +91,12 @@ block content
 					button#speak Have fun
 					p#lang
 					select.languages(name="languages")
-						
+			.truc
+				#hue-slider
+
+		//h2#possibilities
+
+
 		script(src='/javascripts/imagesloaded.js')
 		script(src='/javascripts/html2canvas.js')
 		script(src="/javascripts/main.js")
