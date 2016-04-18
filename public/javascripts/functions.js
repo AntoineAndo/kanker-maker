@@ -66,7 +66,7 @@ var getAllFilesFromFolder = function(dir) {
             results = results.concat(getAllFilesFromFolder(file))
         }
         else{
-            if( extension == "png" ){ 
+            if( extension == "png" && extension  == "gif"){ 
                 var file = file.split("/").pop(); 
                 results.push(file); 
             } 

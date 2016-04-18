@@ -5,4 +5,5 @@ clipboard = require('clipboard');
 require("angular");
 fs = require('fs');
 path = require('path');
-urify = require('urify');
+DataUri = require('datauri').sync;
+//functions = require("./functions.js");
