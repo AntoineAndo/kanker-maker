@@ -39,10 +39,10 @@ $(document).ready(function() {
                 }
 
                 // Usage
-                getDataUri('/logo.png', function(dataUri) {
-                    // Do whatever you'd like with the Data URI!
+                getDataUri(src, function(dataUri) {
+                    console.log(dataUri);
                 });
-                
+
 
             });
         });

@@ -114,8 +114,8 @@ var generateImage = function(assets, assetList, callback){
     easyimg.crop({
         src: "public/images/kanker.png",
         dst: "public/images/crop.png",
-        cropwidth: 600,
-        cropheight: 900
+        cropwidth: 240,
+        cropheight: 330
     });
     callback();
 }
