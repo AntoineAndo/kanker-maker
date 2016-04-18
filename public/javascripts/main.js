@@ -10,40 +10,36 @@ $(document).ready(function() {
         });
     });
 
+    function getDataUri(url, callback) {
+        var image = new Image();
 
-/*
+        image.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
 
-    $(function(){
-        assetList.forEach(function(assetName, key){
-            assets[assetName].forEach(function(value, index){
-                src = value;
+            canvas.getContext('2d').drawImage(this, 0, 0);
 
-                function getDataUri(url, callback) {
-                    var image = new Image();
+            callback(canvas.toDataURL('image/png'));
+        };
 
-                    image.onload = function () {
-                        var canvas = document.createElement('canvas');
-                        canvas.width = this.naturalWidth;
-                        canvas.height = this.naturalHeight;
+        image.src = url;
+    }
 
-                        canvas.getContext('2d').drawImage(this, 0, 0);
-
-                        callback(canvas.toDataURL('image/png'));
-                    };
-
-                    image.src = url;
-                }
-
-                getDataUri(src, function(dataUri) {
-                    assets[assetName][index] = dataUri;
-                    console.log(assets);
+    setTimeout( 
+        function(){
+            assetList.forEach(function(assetName, key){
+                assets[assetName].forEach(function(value, index){
+                    src = value;
+                    if(value.split(".").pop() != "gif"){
+                        getDataUri(src, function(dataUri) {
+                            assets[assetName][index] = dataUri;
+                        });
+                    }
                 });
-
-
             });
-        });
-    });
-    */
+        }, 0 );
+    
     
     
 /*
