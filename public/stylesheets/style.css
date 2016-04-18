@@ -98,6 +98,8 @@ h1{
     width: 51%;
     height: 100%;
 	background-color: #202020;
+	background: url("../images/curtain.png") no-repeat;
+	background-size: 150% 100%;
 }
  
 .overlay .loader-section.section-left {
@@ -413,6 +415,14 @@ h1{
 .shuffle{
     width: 400px;
     height: 50px;
+    background: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.shuffle:hover{
+	cursor: pointer;
 }
 
 @-webkit-keyframes save {
