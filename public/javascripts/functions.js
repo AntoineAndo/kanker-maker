@@ -19,7 +19,7 @@ var getAllFilesPathFromFolder = function(dir) {
             results = results.concat(getAllFilesFromFolder(file))
         }
         else{
-            if( extension == "png" ){
+            if( extension == "png" || extension  == "gif" || extension  == "jpg"){
                 /*
                var file = file.split("/");
                file = file.splice(3,5);
@@ -66,8 +66,11 @@ var getAllFilesFromFolder = function(dir) {
             results = results.concat(getAllFilesFromFolder(file))
         }
         else{
-            if( extension == "png" && extension  == "gif"){ 
-                var file = file.split("/").pop(); 
+            if( extension == "png" || extension  == "gif" || extension  == "jpg"){ 
+                var file = file.split("/").pop();
+               //results.push(truc);
+
+               // var file = file.split("/").pop(); 
                 results.push(file); 
             } 
         }
@@ -111,8 +114,8 @@ var generateImage = function(assets, assetList, callback){
     easyimg.crop({
         src: "public/images/kanker.png",
         dst: "public/images/crop.png",
-        cropwidth: 230,
-        cropheight: 310
+        cropwidth: 600,
+        cropheight: 900
     });
     callback();
 }
