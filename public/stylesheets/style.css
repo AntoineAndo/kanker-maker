@@ -286,7 +286,7 @@ h1{
 .bloc:first-child .buttons {
     position: absolute;
     right: -8px;
-    bottom: 0px;
+    bottom: -46px;
     width: 100%;
 }
 
