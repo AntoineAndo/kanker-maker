@@ -1,7 +1,6 @@
 var voicelist = responsiveVoice.getVoices();
 
 $(document).ready(function() {
-    $("body").attr("class", "loaded");
 
     var speeches = [];
     readTextFile("/speech.txt", function(lines){
@@ -39,6 +38,10 @@ $(document).ready(function() {
                 });
             });
         }, 0 );
+    setTimeout(function(){
+
+        $("body").attr("class", "loaded");
+    }, 500);
     
     
     
@@ -201,6 +204,7 @@ $(document).ready(function() {
     });
 
     $("#upload").bind("click", function() {
+
         swal({
             title: "Do you wish to upload this on Imgur ?",
             text: "Do you really want to share you kanker you cold-hearted bastard ?",
