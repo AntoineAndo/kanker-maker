@@ -11,42 +11,39 @@ $(document).ready(function() {
     });
 
 
-
+/*
 
     $(function(){
         assetList.forEach(function(assetName, key){
             assets[assetName].forEach(function(value, index){
-                src = "images/Assets/" + assetName + "/" + value;
+                src = value;
 
                 function getDataUri(url, callback) {
                     var image = new Image();
 
                     image.onload = function () {
                         var canvas = document.createElement('canvas');
-                        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-                        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+                        canvas.width = this.naturalWidth;
+                        canvas.height = this.naturalHeight;
 
                         canvas.getContext('2d').drawImage(this, 0, 0);
 
-                        // Get raw image data
-                        callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
-
-                        // ... or get as Data URI
                         callback(canvas.toDataURL('image/png'));
                     };
 
                     image.src = url;
                 }
 
-                // Usage
                 getDataUri(src, function(dataUri) {
-                    console.log(dataUri);
+                    assets[assetName][index] = dataUri;
+                    console.log(assets);
                 });
 
 
             });
         });
     });
+    */
     
     
 /*
