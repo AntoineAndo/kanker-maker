@@ -22,6 +22,7 @@
 
 
 body {
+	overflow: hidden;
 	margin: 0;
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     background: url("http://golden-diamond.com/wp-content/uploads/2013/10/wood-pattern-and-237601.jpg");

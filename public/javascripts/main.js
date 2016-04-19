@@ -1,5 +1,19 @@
 var voicelist = responsiveVoice.getVoices();
 
+setTimeout( 
+    function(){
+        assetList.forEach(function(assetName, key){
+            assets[assetName].forEach(function(value, index){
+                src = value;
+                if(value.split(".").pop() != "gif"){
+                    getDataUri(src, function(dataUri) {
+                        assets[assetName][index] = dataUri;
+                    });
+                }
+            });
+        });
+    }, 0 );
+
 $(document).ready(function() {
 
     var speeches = [];
@@ -8,51 +22,12 @@ $(document).ready(function() {
             speeches.push(line);
         });
     });
-
-    function getDataUri(url, callback) {
-        var image = new Image();
-
-        image.onload = function () {
-            var canvas = document.createElement('canvas');
-            canvas.width = this.naturalWidth;
-            canvas.height = this.naturalHeight;
-
-            canvas.getContext('2d').drawImage(this, 0, 0);
-
-            callback(canvas.toDataURL('image/png'));
-        };
-
-        image.src = url;
-    }
-
-    setTimeout( 
-        function(){
-            assetList.forEach(function(assetName, key){
-                assets[assetName].forEach(function(value, index){
-                    src = value;
-                    if(value.split(".").pop() != "gif"){
-                        getDataUri(src, function(dataUri) {
-                            assets[assetName][index] = dataUri;
-                        });
-                    }
-                });
-            });
-        }, 0 );
+    
     setTimeout(function(){
 
         $("body").attr("class", "loaded");
     }, 1000);
     
-    
-    
-/*
-    
-        $("a span").bind("click", function() {
-            //$(".overlay").fadeOut(500);
-            $("body").attr("class", "loaded");
-        });
-    */
-
     $(function() {
 
           $.each(voicelist, function() {
@@ -95,11 +70,6 @@ $(document).ready(function() {
     //var audio = new Audio('/sounds/pwet.mp3');
 
     $(".controller button").bind("click", function() {
-        /*
-            audio.pause();
-            audio.currentTime = 0;
-            audio.play();
-        */
 
         attrClass = $(this).attr("class").split("-").pop()
         id = $("." + attrClass).attr("id").split("-").pop();
@@ -342,6 +312,22 @@ $(document).ready(function() {
             .attr("id", attrClass + '-' + id)
             .attr("class", attrClass)
             .attr("rotate", rotation);
+    }
+
+    function getDataUri(url, callback) {
+        var image = new Image();
+
+        image.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
+
+            canvas.getContext('2d').drawImage(this, 0, 0);
+
+            callback(canvas.toDataURL('image/png'));
+        };
+
+        image.src = url;
     }
 
 });
