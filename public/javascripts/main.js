@@ -41,7 +41,7 @@ $(document).ready(function() {
     setTimeout(function(){
 
         $("body").attr("class", "loaded");
-    }, 500);
+    }, 1000);
     
     
     
