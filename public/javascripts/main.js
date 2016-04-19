@@ -12,7 +12,8 @@ setTimeout(
                 }
             });
         });
-    }, 0 );
+    },
+0 );
 
 $(document).ready(function() {
 
@@ -22,7 +23,7 @@ $(document).ready(function() {
             speeches.push(line);
         });
     });
-    
+
     setTimeout(function(){
 
         $("body").attr("class", "loaded");
@@ -66,8 +67,6 @@ $(document).ready(function() {
         });
         */
     });
-
-    //var audio = new Audio('/sounds/pwet.mp3');
 
     $(".controller button").bind("click", function() {
 
