@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
 	var assets = func.listDirectories("/images/Assets");
 	
 	assets.forEach(function(asset, key){
+		console.log(__dirname+"/../public/images/Assets/"+asset);
 		myAssets.push({name: asset, list: func.getAllFilesPathFromFolder(__dirname+"/../public/images/Assets/"+asset)});
 	});
 	
@@ -30,7 +31,6 @@ router.get('/api', function(req, res, next) {
 	assets = ["bases", "eyes", "mustaches", ]; 
 	
 	assets.forEach(function(asset){
-		console.log(__dirname+"/../public/images/Assets/"+asset);
 		myAssets.push({name: asset, list: func.getAllFilesFromFolder(__dirname+"/../public/images/Assets/"+asset)});
 	});
 	console.log(myAssets);
