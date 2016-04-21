@@ -15,7 +15,7 @@ var voicelist = responsiveVoice.getVoices();
 
         image.src = url;
     }
-    
+
 
 setTimeout( 
     function(){
@@ -323,8 +323,16 @@ $(document).ready(function() {
     }
 
     function draw(img, attrClass, array, id, rotation) {
+
+        src = array[id];
+        if(src.split(".").pop() == "png"){
+            getDataUri(src, function(dataUri) {
+                src = assets[attrClass][id] = dataUri;
+            });
+        }
+
         img
-            .attr("src", array[id])
+            .attr("src", src)
             .attr("id", attrClass + '-' + id)
             .attr("class", attrClass)
             .attr("rotate", rotation);
