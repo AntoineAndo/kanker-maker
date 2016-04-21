@@ -1,5 +1,22 @@
 var voicelist = responsiveVoice.getVoices();
 
+    function getDataUri(url, callback) {
+        var image = new Image();
+
+        image.onload = function () {
+            var canvas = document.createElement('canvas');
+            canvas.width = this.naturalWidth;
+            canvas.height = this.naturalHeight;
+
+            canvas.getContext('2d').drawImage(this, 0, 0);
+
+            callback(canvas.toDataURL('image/png'));
+        };
+
+        image.src = url;
+    }
+    
+
 setTimeout( 
     function(){
         assetList.forEach(function(assetName, key){
@@ -311,22 +328,6 @@ $(document).ready(function() {
             .attr("id", attrClass + '-' + id)
             .attr("class", attrClass)
             .attr("rotate", rotation);
-    }
-
-    function getDataUri(url, callback) {
-        var image = new Image();
-
-        image.onload = function () {
-            var canvas = document.createElement('canvas');
-            canvas.width = this.naturalWidth;
-            canvas.height = this.naturalHeight;
-
-            canvas.getContext('2d').drawImage(this, 0, 0);
-
-            callback(canvas.toDataURL('image/png'));
-        };
-
-        image.src = url;
     }
 
 });
